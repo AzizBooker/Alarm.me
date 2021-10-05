@@ -22,6 +22,8 @@ import Colors from "../theme/Colors";
 import FontSize from "../theme/FontSize";
 import reduxStore from "../redux/store";
 import { bold } from "cli-boxes";
+import CustomText from "../components/CustomText";
+import CustomButton from "../components/CustomButton";
 
 export default function HomeScreen() {
   const [day, setDay] = useState(getCurrentDay);
@@ -42,11 +44,12 @@ export default function HomeScreen() {
   return (
     <TouchableWithoutFeedback onPress={handleGlobalTouch}>
       <View style={styles.container}>
-        <StatusBar hidden={true} />
+        <StatusBar hidden={false} />
         <View style={styles.textContainer}>
-          <Text style={{...styles.text,fontSize:FontSize.h2 }}>{day}</Text>
-          <Text style={{...styles.text,fontSize:FontSize.h1}}>{time}</Text>
-          <Text style={{...styles.text,fontSize:FontSize.h2}}>{date}</Text>
+          <CustomText fontSize={FontSize.h3}>{day}</CustomText>
+          <CustomText fontSize={FontSize.h1} fontWeight="bold">{time}</CustomText>
+          <CustomText fontSize={FontSize.h3} >{date}</CustomText>
+          <CustomButton variants="outlined" title="Hello" paddingHorizontal={15} fontWeight="bold"/>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -66,6 +69,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.primary,
-    fontWeight:"bold"
-  },
+    fontWeight:"bold",
+    marginVertical:5,
+  }
 });

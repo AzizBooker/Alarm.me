@@ -2,7 +2,7 @@ import moment from "moment"
 
 //Gets the current time in Hour:Minute Format
 export const getCurrentTime=()=>{ 
-    return moment().format('LTS')
+    return moment().format('hh:mm')
 }
 //Gets current date in "Dec,23,2021"  format
 export const getCurrentDate=()=>{  
