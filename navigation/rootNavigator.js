@@ -1,4 +1,4 @@
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { StyleSheet } from "react-native";
 import React from 'react'
 import HomeScreen from "../screens/HomeScreen";
@@ -6,17 +6,29 @@ import AlarmScreen from "../screens/AlarmScreen";
 import TimerScreen from "../screens/TimerScreen";
 import StopwatchScreen from "../screens/StopwatchScreen";
 import CountdownScreen from "../screens/CountdownScreen";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-const Tab=createMaterialTopTabNavigator()
+import Colors from "../theme/Colors";
+const Tab=createMaterialBottomTabNavigator()
 
 export default function RootNavigator(){
     return(
-    <Tab.Navigator initialRouteName="Home" backBehavior="history" style={styles.tabBarContainerStyle} screenOptions={
+    <Tab.Navigator 
+    initialRouteName="Home" 
+     backBehavior="history" 
+     style={styles.tabBarContainerStyle}
+     labeled={true} 
+     shifting={false}
+    barStyle={{display:'flex', backgroundColor: Colors.background }}
+     
+     screenOptions={
         {
-            tabBarStyle:styles.tabBarTabsStyle
+            tabBarActiveTintColor:"tomato"
         }
     }>
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Home" 
+        component={HomeScreen}
+        options={{}}
+        
+        />
         <Tab.Screen name="Alarm" component={AlarmScreen} />
         <Tab.Screen name="Timer" component={TimerScreen} />
         <Tab.Screen name="Stopwatch" component={StopwatchScreen} />

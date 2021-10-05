@@ -1,6 +1,6 @@
 export default FontSize={
-    h1:24,
-    h2:18,
-    h3:16,
+    h1:48,
+    h2:24,
+    h3:18,
     p:12
 }
