@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import ControllerReducer from './reducer/controller.reducer'
+import { createStore } from 'redux';
+import ControllerSlice from './reducer/ControllerSlice';
 
-const reduxStore=configureStore({reducer:ControllerReducer})
-
-
-export default reduxStore;
+export default configureStore({
+reducer:{
+    controller:ControllerSlice
+}
+})

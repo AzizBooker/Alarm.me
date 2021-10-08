@@ -1,4 +1,5 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { useSelector } from "react-redux";
 import { StyleSheet } from "react-native";
 import React from 'react'
 import HomeScreen from "../screens/HomeScreen";
@@ -10,14 +11,16 @@ import Colors from "../theme/Colors";
 const Tab=createMaterialBottomTabNavigator()
 
 export default function RootNavigator(){
+    const isActive=useSelector((state)=>state.controller.isActive)
     return(
     <Tab.Navigator 
     initialRouteName="Home" 
      backBehavior="history" 
      style={styles.tabBarContainerStyle}
+    
      labeled={true} 
      shifting={false}
-    barStyle={{display:'flex', backgroundColor: Colors.background }}
+    barStyle={{display:(isActive==true?'flex' :"none" ), backgroundColor: Colors.background }}
      
      screenOptions={
         {

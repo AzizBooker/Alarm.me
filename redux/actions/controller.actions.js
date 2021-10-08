@@ -1,8 +1,5 @@
-export const toggleIsActive={
-    type:"controller/toggleIsActive"
-}
 
- const setIsActive=(flag)=>{
+ export const setIsActive=(flag)=>{
      return{
     type:'controller/setIsActive',
     payload:flag
