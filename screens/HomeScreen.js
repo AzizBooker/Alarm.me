@@ -25,6 +25,7 @@ import reduxStore from "../redux/store";
 import { bold } from "cli-boxes";
 import CustomText from "../components/CustomText";
 import CustomButton from "../components/CustomButton";
+import AlarmWidget from "../components/widgets/AlarmWidget.js";
 
 export default function HomeScreen() {
   const dispatch=useDispatch()
@@ -63,7 +64,6 @@ export default function HomeScreen() {
           <CustomText fontSize={FontSize.h3}>{day}</CustomText>
           <CustomText fontSize={FontSize.h1} fontWeight="bold">{time}</CustomText>
           <CustomText fontSize={FontSize.h3} >{date}</CustomText>
-          
         </View>
       </View>
     </TouchableWithoutFeedback>
