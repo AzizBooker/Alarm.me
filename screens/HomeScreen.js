@@ -46,17 +46,14 @@ export default function HomeScreen() {
   });
 
 
-  const  handleTouch=useCallback(
-    () => {
+  const  handleTouch=()=>{
       console.log('tap')
       dispatch(setIsActive(true))
       setTimeout(()=>{
         dispatch(setIsActive(false),
         console.log('isActive dispatched')
         )},5000)
-    },
-    [dispatch],
-  )
+      }
 
   return (
     <TouchableWithoutFeedback onPress={handleTouch}>
@@ -66,9 +63,7 @@ export default function HomeScreen() {
           <CustomText fontSize={FontSize.h3}>{day}</CustomText>
           <CustomText fontSize={FontSize.h1} fontWeight="bold">{time}</CustomText>
           <CustomText fontSize={FontSize.h3} >{date}</CustomText>
-          <CustomText>hi</CustomText>
-          <CustomButton variants="outlined" title="Hello" paddingHorizontal={15} fontWeight="bold" 
-          onPress={()=>{console.log('Hello')}}/>
+          
         </View>
       </View>
     </TouchableWithoutFeedback>

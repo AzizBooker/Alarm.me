@@ -8,9 +8,11 @@ export const ControllerSlice=createSlice({
     },
     reducers:{
         setIsActive: (state,payload)=>{
+           
             state.isActive=payload
         },
         setInactivityTime:(state,payload)=>{
+          
             state.inactivityTime=payload
         }
     }

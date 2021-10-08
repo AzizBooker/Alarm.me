@@ -2,16 +2,20 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { useSelector } from "react-redux";
 import { StyleSheet } from "react-native";
 import React from 'react'
+import { useEffect } from "react";
 import HomeScreen from "../screens/HomeScreen";
 import AlarmScreen from "../screens/AlarmScreen";
 import TimerScreen from "../screens/TimerScreen";
 import StopwatchScreen from "../screens/StopwatchScreen";
 import CountdownScreen from "../screens/CountdownScreen";
 import Colors from "../theme/Colors";
+import store from "../redux/store";
 const Tab=createMaterialBottomTabNavigator()
 
 export default function RootNavigator(){
-    const isActive=useSelector((state)=>state.controller.isActive)
+
+    var isActive=useSelector((state)=>state.controller.isActive)
+
     return(
     <Tab.Navigator 
     initialRouteName="Home" 
@@ -20,7 +24,7 @@ export default function RootNavigator(){
     
      labeled={true} 
      shifting={false}
-    barStyle={{display:(isActive==true?'flex' :"none" ), backgroundColor: Colors.background }}
+    barStyle={{display:(isActive==true?'flex' :"flex" ), backgroundColor: Colors.background }}
      
      screenOptions={
         {
